@@ -1,1 +1,120 @@
-Hello World
+<!DOCTYPE HTML>
+<html xml:lang="en" lang="en">
+<head>
+  <title>CSE442 | Final Project</title>
+  <style media="all">
+* { padding: 0; margin: 0; }
+ body {
+  margin: 0 auto 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
+  font-size: 0.95em;
+}
+ a, a:visited { text-decoration: none; color: #7533f4; }
+a:hover { text-decoration: underline; color: #f4b014; }
+ h1, h2, h3, h4, h5 {
+  color: #492a7c;
+  background-color: inherit;
+  font-weight: normal;
+  padding: 0 0 5px 0;
+  margin: 15px 0 0 0;
+  border: none;
+  clear: right;
+}
+h1 { font-size: 24pt; margin:  5px 0 10px 0; line-height: 28px; }
+h2 { font-size: 14pt; margin: 30px 0 15px 0; letter-spacing: 0.01em; border-bottom: 1px solid #ccc;  line-height: 20px;}
+h3 { font-size: 13pt; }
+h4 { font-size: 12pt; }
+h5 { font-size: 11pt; }
+p { margin: 0 0 10px 0; }
+ .content {
+  margin: 0;
+  padding: 15px 20px;
+  background-color: #ffffff;
+}
+ .title, .title h1, .title a {
+  color: #492a7c;
+  font-size: 24pt;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+ .footer {
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+  padding-top: 4px;
+  text-align: right;
+  font-size: 12px;
+}
+.footer a {
+  color: #21346B;
+}
+.footer a:hover {
+  color: #ce3333;
+}
+  </style>
+</head>
+<body>
+<div class="content">
+   <section class="title">
+    <a href="/">Going Green</a>
+  </section>
+
+   <section>
+    <p>
+      <strong>Team Members</strong>: Ryan Park, Nour Ayad, Jake Jung
+    </p>
+  </section>
+
+  <iframe width="100%" height="766" frameborder="0"
+  src="https://observablehq.com/embed/@jakej217/final-project?cell=viewof+demographics&cell=nycMap&cell=viewof+resetButton"></iframe>
+
+  <section>
+    <h3>Overview</h3>
+    <p>For our project, we wanted to focus on transportation in New York City. Specifically, we wanted to design a visualization to show policy makers how certain demographics such as age and income relate to the different types of transportation citizens have access to. This knowledge will enable policy makers to focus on improving accessibility to areas that are currently underserved. For the sake of this project, we are focusing on two different forms of transportation: the NYC subway and bike sharing platforms. We chose these two because they are two simple alternatives to driving, and increasing usage of these public transits are of top priority as we fight climate change. The NYC subway is a crucial part of New York City's current transportation, while bike sharing is a relatively new mode of transportation, and as such policy makers are still figuring out how best to legislate bike sharing businesses.</p>
+  </section>
+
+  <section>
+    <h3>Datasets</h3>
+    <p>We compiled the following relevant datasets:
+
+      - Bike sharing data set from Citibike, which includes data on all of the bike sharing trips the service has provided from 2013-2019. This includes some additional datasets that have information on the bike sharing stations and their data.
+      
+      - Data from the Metropolitan Transportation Authority which contains data from the subway stations in NYC.
+      
+      - Demographic data from the US Census Bureau that was cleaned by the NYC government, showing results for each Neighborhood Tabulation Area (NTA) zone in the city.
+     
+      - A geojson of all the NTA zones from the NYC Department of City Planning, which allowed us to visually plot each NTA</p>
+  </section>
+
+  <section>
+    <h3>Goals</h3>
+    <p>
+      - Show how demographic factors such as age or income relate to certain patterns in transportation.
+      
+      - Highlight the similarities and differences between subway usage vs the more recent idea of bike sharing.
+     
+      - Present our observations to policy makers to combat accessibility in under deserved communities.</p>
+  </section>
+
+  <section>
+    <h3>Demo Video</h3>
+    <p>https://www.youtube.com/watch?v=wHgVXxTLMRA</p>
+  </section>
+
+  <section>
+    <h3>Key Observations</h3>
+    <p>
+      - Population was mostly concentrated in the center of the visualization where most of the subway and bike share stations were located.
+     
+      - Age tended to be higher on the outskirts of the city, with a few exceptions in the center.
+      - 6, 7, and 8 Avenue Express all had highest concentration of bike and subway usages, as they run straight through Manhattan.</p>
+  </section>
+
+  <div class="footer">
+    <a href="https://courses.cs.washington.edu/courses/cse442/20au/">CSE 442 Data Visualization</a>
+    <a href="http://www.washington.edu">University of Washington</a>
+  </div>
+ </div>
+</body>
+</html> 
