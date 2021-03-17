@@ -107,17 +107,52 @@ p { margin: 0 0 10px 0; }
     </p>
     <h4>Out-of-distribution Tests with Adversarial Examples</h4>
     <p>In order to demonstrate the clear advantages of using such a training procedure, we devised a test which would test each model's accuracy on out-of-distribution samples. For this test, we used the <a href="https://arxiv.org/pdf/1412.6572.pdf">Fast Gradient Sign Method</a> to produce adversarial examples from the test set for each model with a maximum per-pixel distortion (where each pixel/channel is a value from 0 to 1). We then calculated the test accuracies of each model on these adversarial examples to determine how well the model could generalize on slightly-perturbed, out-of-distribution examples.</p>
-    <img src="images/AdversarialTestingMNIST.png" width="800" height="500">
+
+    <p><i>Some adversarial examples on MNIST at 0.4 max per-pixel distortion:</i></p>
+    <table style="width:100%; text-align: center;">
+      <tr>
+        <td><img src="images/adversarialmnist65baseline.png" width=128 height=128 /></td>
+        <td><img src="images/adversarialmnist85nc.png" width=128 height=128 /></td>
+        <td><img src="images/adversarialmnist23baseline.png" width=128 height=128 /></td>
+        <td><img src="images/adversarialmnist00nc.png" width=128 height=128 /></td>
+      </tr>
+      <tr>
+        <td>Labelled 6. Baseline predicted 5.</td>
+        <td>Labelled 8. NC predicted 5.</td>
+        <td>Labelled 2. Baseline predicted 3.</td>
+        <td>Labelled 0. NC predicted 0.</td>
+      </tr>
+    </table>
+    
+
+    <br/>
+    <img src="images/AdversarialTestingMNIST.png" width="800" height="600">
     <p>On MNIST, the Non-Correlated Model enjoys a small, but significant lead over the baseline model. Due to the simplicity of the problem, the max per-pixel distortion could be set to a very high number before test accuracies were 0%. Overall, the Non-Correlated Model was always about 10 percentage points higher in test accuracy across all max pixel distortion values.</p>
-    <img src="images/AdversarialTestingCIFAR10.png" width="800" height="500">
-    <p>CIFAR10 is a much more complex dataset with larger 32x32 pixel images and three color channels, as well as more ambiguity between classes due to viewpoints and colored objects. On this dataset, the baseline model maxed out at a 0.1% test accuracy among all per-pixel distortions, which does not show up on this graph. The Non-Correlated Model enjoys a large and significant lead over the baseline, implying that the Non-Correlated Model is much more resistant to small perturbations than the baseline. </p>
+
+    <p><i>Some adversarial examples on CIFAR10 at 0.01 max per-pixel distortion:</i></p>
+    <table style="width:100%; text-align: center;">
+      <tr>
+        <td><img src="images/advcifar10nc22.png" width=128 height=128 /></td>
+        <td><img src="images/cleancifar10nc22.png" width=128 height=128 /></td>
+        <td><img src="images/advcifar10btruckhorse.png" width=128 height=128 /></td>
+        <td><img src="images/cleancifar10btruckhorse.png" width=128 height=128 /></td>
+      </tr>
+      <tr>
+        <td>Labelled bird. NC predicted bird.</td>
+        <td>Clean version of example on the right.</td>
+        <td>Labelled truck. Baseline predicted horse.</td>
+        <td>Clean version of example on the right.</td>
+      </tr>
+    </table>
+    <img src="images/AdversarialTestingCIFAR10.png" width="800" height="600">
+    <p>CIFAR10 is a much more complex dataset with larger 32x32 pixel images and three color channels, as well as more ambiguity between classes due to viewpoints and colored objects. On this dataset, the NC model observes a clear ~4 percentage point lead over the baseline at all distortion maximums.</p>
 
   </section>
   
   <section>
     <h3>Discussion</h3>
     <p>
-      Our Non-Correlated Model consistently provides the best test accuracies that dropout models have to offer on both the MNIST and CIFAR10 and performs significantly better in the face of small pixel perturbations, implying that ensemble diversity is correlated with adversarial defense strength. In this work, we do not delve into what kinds of diversity are useful, assuming that any constraint which maximally increases diversity while still allowing the model to optimize towards the main objective function is beneficial. In further work, we would like to be more specific in what kinds of diversity we optimize for and be able to quantify the amount of "diversity" in any given dropout model. We would also like to test against more types of adversarial attacks in order to characterize the adversarial resistance Non-Correlated Models. Under these testing conditions, it is possible that Non-Correlated Models are more resistant to FGSM because their gradients make it harder for gradient attacks to find suitable adversarial examples. This would warrant an investigation into gradientless methods for finding adversarial examples to find out whether Non-Correlated Models are resistant against these types of attacks, too.
+      Our Non-Correlated Model consistently provides the best test accuracies that dropout models have to offer on both the MNIST and CIFAR10 and performs significantly better in the face of small pixel perturbations, implying that ensemble diversity is correlated with out-of-distribution performance. In this work, we do not delve into what kinds of diversity are useful, assuming that any constraint which maximally increases diversity while still allowing the model to optimize towards the main objective function is beneficial. In further work, we would like to be more specific in what kinds of diversity we optimize for and be able to quantify the amount of "diversity" in any given dropout model. We would also like to test against more types of adversarial attacks in order to characterize the adversarial resistance Non-Correlated Models. Under these testing conditions, it is possible that Non-Correlated Models are more resistant to FGSM because their gradients make it harder for gradient attacks to find suitable adversarial examples. This would warrant an investigation into gradientless methods for finding adversarial examples to find out whether Non-Correlated Models are resistant against these types of attacks, too.
     </p>
   </section>
   
