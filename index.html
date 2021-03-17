@@ -57,12 +57,12 @@ p { margin: 0 0 10px 0; }
 <body>
 <div class="content">
    <section class="title">
-    <a href="/">Going Green</a>
+    <a href="/">Exploring Increasing Diversity in Dropout Models</a>
   </section>
 
    <section>
     <p>
-      <strong>Team Members</strong>: Ryan Park, Nour Ayad, Jake Jung
+      <strong>Team Members</strong>: Preston Lee, Ryan Park
     </p>
   </section>
 
@@ -71,30 +71,18 @@ p { margin: 0 0 10px 0; }
 
   <section>
     <h3>Overview</h3>
-    <p>For our project, we wanted to focus on transportation in New York City. Specifically, we wanted to design a visualization to show policy makers how certain demographics such as age and income relate to the different types of transportation citizens have access to. This knowledge will enable policy makers to focus on improving accessibility to areas that are currently underserved. For the sake of this project, we are focusing on two different forms of transportation: the NYC subway and bike sharing platforms. We chose these two because they are two simple alternatives to driving, and increasing usage of these public transits are of top priority as we fight climate change. The NYC subway is a crucial part of New York City's current transportation, while bike sharing is a relatively new mode of transportation, and as such policy makers are still figuring out how best to legislate bike sharing businesses.</p>
+    <p>In machine learning, ensemble methods are techniques that are applied to algorithms that can provide more meaningful data points or even more accurate results. For example, algorithms such as logistic regression and naïve bayes may be used to predict a certain outcome, but we could potentially combine these algorithms together as some sort of aggregation. Or, we could train an algorithm on subsets of data and combine the results together. For the purpose of this project, we wanted to take a look into the dropout technique. Similar to the methods just mentioned, dropout is an ensemble technique to regularize neural networks. As there has been less research that has been done on the effect of model diversity within dropout, we wanted to do more research and experimentation on this for our final project. In our project, we will attempt to both explore the benefits/disadvantages of output diversity on a neural network outputs as well as find a scheme to enforce dropout diversity for better regularization in neural networks. We will conduct experiments on MNIST and CIFAR10 to compare diverse dropout vs. vanilla dropout.</p>
   </section>
 
   <section>
     <h3>Datasets</h3>
-    <p>We compiled the following relevant datasets:
-
-      - Bike sharing data set from Citibike, which includes data on all of the bike sharing trips the service has provided from 2013-2019. This includes some additional datasets that have information on the bike sharing stations and their data.
-      
-      - Data from the Metropolitan Transportation Authority which contains data from the subway stations in NYC.
-      
-      - Demographic data from the US Census Bureau that was cleaned by the NYC government, showing results for each Neighborhood Tabulation Area (NTA) zone in the city.
-     
-      - A geojson of all the NTA zones from the NYC Department of City Planning, which allowed us to visually plot each NTA</p>
+    <p>Our data set consist of MNIST and CIFAR10. MNIST is a database consisting of 60,000 training images and 10,000 testing images of hand written digits from 0-9. More information about this can be found on its wiki page: https://en.wikipedia.org/wiki/MNIST_database Cifar-10 is a database consisting 60,000 32x32 images of 10 different classes including objects such as airplanes, cars, birds, etc. More information about this dataset can be found on its wiki page: https://en.wikipedia.org/wiki/CIFAR-10</p>
   </section>
 
   <section>
-    <h3>Goals</h3>
+    <h3>Previous Work</h3>
     <p>
-      - Show how demographic factors such as age or income relate to certain patterns in transportation.
-      
-      - Highlight the similarities and differences between subway usage vs the more recent idea of bike sharing.
-     
-      - Present our observations to policy makers to combat accessibility in under deserved communities.</p>
+      Our work is motivated by the following article: https://arxiv.org/abs/1908.11091, which is a research paper aimed at the applications of ensemble learning and digging deep into the math behind an increase in ensemble accuracy when prediction errors are more uniformly distributed. We also utilized pytorch and its neural network and adversarial testing libraries to help us dive into our project.</p>
   </section>
 
   <section>
@@ -103,7 +91,25 @@ p { margin: 0 0 10px 0; }
   </section>
 
   <section>
-    <h3>Key Observations</h3>
+    <h3>Our Approach</h3>
+    <p>
+      - Population was mostly concentrated in the center of the visualization where most of the subway and bike share stations were located.
+     
+      - Age tended to be higher on the outskirts of the city, with a few exceptions in the center.
+      - 6, 7, and 8 Avenue Express all had highest concentration of bike and subway usages, as they run straight through Manhattan.</p>
+  </section>
+  
+  <section>
+    <h3>Results</h3>
+    <p>
+      - Population was mostly concentrated in the center of the visualization where most of the subway and bike share stations were located.
+     
+      - Age tended to be higher on the outskirts of the city, with a few exceptions in the center.
+      - 6, 7, and 8 Avenue Express all had highest concentration of bike and subway usages, as they run straight through Manhattan.</p>
+  </section>
+  
+  <section>
+    <h3>Observations</h3>
     <p>
       - Population was mostly concentrated in the center of the visualization where most of the subway and bike share stations were located.
      
